@@ -1,6 +1,6 @@
 import 'package:ez/model/fetch_process.dart';
-import 'package:ez/ui/page/main/main_page.dart';
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/ui/page/account/account_list_page.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,21 +18,16 @@ apiSubscription(Stream<FetchProcess> apiResult, BuildContext context) {
       } else if (p.response?.success == true) {
         switch (p.type) {
           case ApiType.performLogin:
-            showSuccess(context, UIData.success, FontAwesomeIcons.check);
+            showSuccess(context, Constants.success, FontAwesomeIcons.check);
+            Future.delayed(const Duration(seconds: 1), () {
+              Navigator.pushAndRemoveUntil(
+                  context, MaterialPageRoute(builder: (context) => AccountListPage()), (Route<dynamic> route) => false);
+            });
             break;
-          case ApiType.validateUsername:
+          case ApiType.performCheckBalance:
             break;
-        }
-      } else {
-        //TODO: remove
-        if (p.type == ApiType.performLogin) {
-          showSuccess(context, UIData.success, FontAwesomeIcons.check);
-
-          Future.delayed(const Duration(seconds: 1), () {
-            Navigator.pop(context);
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MainPage()));
-          });
+          case ApiType.perfromGetAccountList:
+            break;
         }
       }
     }

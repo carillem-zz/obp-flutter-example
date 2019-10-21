@@ -3,10 +3,8 @@ import 'dart:math';
 import 'package:ez/inherited/login_provider.dart';
 import 'package:ez/ui/page/login/login_widget.dart';
 import 'package:ez/ui/widgets/animated_wave.dart';
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/material.dart';
-
-enum LoginValidationType { username, pass }
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,7 +29,7 @@ class LoginPageState extends State<LoginPage> {
                       gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                colors: UIData.bgGradients,
+                colors: Constants.bgGradients,
               ))),
               onBottom(AnimatedWave(
                 height: 180,
@@ -53,11 +51,9 @@ class LoginPageState extends State<LoginPage> {
         ),
       );
 
-  showValidationError(LoginValidationType type) {
+  showValidationError() {
     scaffoldState.currentState.showSnackBar(SnackBar(
-      content: Text(type == LoginValidationType.username
-          ? UIData.enter_valid_username
-          : UIData.enter_valid_password),
+      content: Text(Constants.enter_valid_username_password),
       duration: Duration(seconds: 2),
     ));
   }

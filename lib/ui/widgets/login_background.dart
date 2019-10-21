@@ -1,5 +1,5 @@
 import 'package:ez/ui/tools/arc_clipper.dart';
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 
 class LoginBackground extends StatelessWidget {
@@ -19,7 +19,7 @@ class LoginBackground extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                colors: UIData.kitGradients,
+                colors: Constants.kitGradients,
               )),
             ),
             showIcon
@@ -27,7 +27,7 @@ class LoginBackground extends StatelessWidget {
                     child: SizedBox(
                         height: deviceSize.height / 8,
                         width: deviceSize.width / 2,
-                        child: Image.asset(UIData.strings_logo_path)))
+                        child: Image.asset(Constants.strings_logo_path)))
                 : Container(
                     width: double.infinity,
                     child: image != null

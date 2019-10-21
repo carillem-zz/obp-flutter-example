@@ -1,4 +1,5 @@
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/model/user_model.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,12 @@ class CommonDrawer extends StatelessWidget {
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text(
-              "Aizat Rafee",
+              UserModel.getInstance().getUsername() == null
+                  ? "" : UserModel.getInstance().getUsername(),
             ),
-            accountEmail: Text("019-6009195"),
+            accountEmail: Text("019-6001995"),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage(UIData.avatar_path),
+              backgroundImage: AssetImage(Constants.avatar_path),
             ),
           ),
           ListTile(
