@@ -1,11 +1,9 @@
-import 'dart:developer';
-
-import 'package:ez/model/response/account_model.dart';
 import 'package:ez/model/response/balance_response.dart';
 import 'package:ez/model/response/login_response.dart';
 import 'package:ez/model/user_model.dart';
 import 'package:ez/services/network_service_response.dart';
 import 'package:ez/utils/constants.dart';
+
 import '../restclient.dart';
 
 class ApiService {

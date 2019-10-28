@@ -1,9 +1,10 @@
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'ez_card_widget.dart';
 
 class HomePage extends StatelessWidget {
-  static const String title = "Home";
+  static const String title = Constants.home;
 
   @override
   Widget build(BuildContext context) {
