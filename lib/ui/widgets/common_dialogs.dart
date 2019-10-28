@@ -1,5 +1,5 @@
 import 'package:ez/services/network_service_response.dart';
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,11 +7,11 @@ fetchApiResult(BuildContext context, NetworkServiceResponse snapshot) {
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(UIData.error),
+      title: Text(Constants.error),
       content: Text(snapshot.message),
       actions: <Widget>[
         FlatButton(
-          child: Text(UIData.ok),
+          child: Text(Constants.ok),
           onPressed: () => Navigator.pop(context),
         )
       ],
@@ -19,7 +19,7 @@ fetchApiResult(BuildContext context, NetworkServiceResponse snapshot) {
   );
 }
 
-showSuccess(BuildContext context, String message, IconData icon) {
+ showSuccess(BuildContext context, String message, IconData icon) {
   showDialog(
       context: context,
       builder: (context) => Center(

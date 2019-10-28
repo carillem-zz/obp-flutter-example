@@ -1,4 +1,4 @@
-import 'package:ez/utils/uidata.dart';
+import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class GradientButton extends StatelessWidget {
           decoration: ShapeDecoration(
               shape: const StadiumBorder(),
               gradient: LinearGradient(
-                colors: UIData.kitGradients,
+                colors: Constants.kitGradients,
               )),
           child: Center(
             child: Text(

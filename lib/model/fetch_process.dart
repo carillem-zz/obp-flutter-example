@@ -1,6 +1,6 @@
 import 'package:ez/services/network_service_response.dart';
 
-enum ApiType { validateUsername, performLogin }
+enum ApiType {performLogin, performCheckBalance, perfromGetAccountList}
 
 class FetchProcess<T> {
   ApiType type;

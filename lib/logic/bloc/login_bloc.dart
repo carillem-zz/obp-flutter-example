@@ -5,21 +5,14 @@ import 'package:ez/model/fetch_process.dart';
 import 'package:rxdart/rxdart.dart';
 
 class LoginBloc {
-  final passController = StreamController<UserLoginViewModel>();
   final loginController = StreamController<UserLoginViewModel>();
   final apiController = BehaviorSubject<FetchProcess>();
-  final usernameResultController = BehaviorSubject<bool>();
 
-  Sink<UserLoginViewModel> get usernameSink => passController.sink;
-
-  Sink<UserLoginViewModel> get loginSink => passController.sink;
-
-  Stream<bool> get usernameResult => usernameResultController.stream;
+  Sink<UserLoginViewModel> get loginSink => loginController.sink;
 
   Stream<FetchProcess> get apiResult => apiController.stream;
 
   LoginBloc() {
-    passController.stream.listen(apiCall);
     loginController.stream.listen(apiCall);
   }
 
@@ -27,14 +20,8 @@ class LoginBloc {
     FetchProcess process = FetchProcess(loading: true);
     //for progress loading
     apiController.add(process);
-    if (userLogin.pass == null) {
-      process.type = ApiType.validateUsername;
-      await userLogin.validateUsername(userLogin.username);
-      usernameResultController.add(userLogin.usernameResult);
-    } else {
-      process.type = ApiType.performLogin;
-      await userLogin.performLogin(userLogin);
-    }
+    process.type = ApiType.performLogin;
+    await userLogin.performLogin(userLogin);
 
     process.loading = false;
     process.response = userLogin.apiResut;
@@ -44,9 +31,7 @@ class LoginBloc {
   }
 
   void dispose() {
-    passController.close();
-    apiController.close();
-    usernameResultController.close();
     loginController.close();
+    apiController.close();
   }
 }
