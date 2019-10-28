@@ -24,6 +24,9 @@ class _LoginCardState extends State<LoginCard>
   String username, pass;
   StreamSubscription<FetchProcess> apiStreamSubscription;
 
+  var usernameController = TextEditingController();
+  var passController = TextEditingController();
+
   Widget loginBuilder() => Form(
     child: Padding(
       padding: const EdgeInsets.all(18.0),
@@ -37,6 +40,7 @@ class _LoginCardState extends State<LoginCard>
                 width: deviceSize.width / 2,
                 child: Image.asset(Constants.strings_logo_path)),
             TextField(
+              controller: usernameController,
               onChanged: (id) => username = id,
               style: TextStyle(fontSize: 15.0, color: Colors.black),
               decoration: InputDecoration(
@@ -48,6 +52,7 @@ class _LoginCardState extends State<LoginCard>
               height: 10.0,
             ),
             TextField(
+              controller: passController,
               onChanged: (password) => pass = password,
                style: TextStyle(fontSize: 15.0, color: Colors.black),
               decoration: InputDecoration(
@@ -98,6 +103,11 @@ class _LoginCardState extends State<LoginCard>
         CurvedAnimation(parent: controller, curve: Curves.fastOutSlowIn));
     animation.addListener(() => this.setState(() {}));
     controller.forward();
+
+    username = "Robert.Us.01";
+    pass = "X!39670561";
+    usernameController.text = username;
+    passController.text = pass;
   }
 
   @override
