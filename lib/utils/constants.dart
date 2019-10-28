@@ -27,6 +27,10 @@ class Constants {
   //accounts
   static const String no_account = "You dont have any bank account. Please create one..";
 
+  //main
+  static const String home = "Home";
+  static const String analytic = "Analytic";
+
   //gneric
   static const String error = "Error";
   static const String success = "Success";

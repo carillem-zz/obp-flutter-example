@@ -1,3 +1,4 @@
+import 'package:ez/ui/page/analytic/analytic_page.dart';
 import 'package:ez/ui/page/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ class CommonBottomNav extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
               title: Text(HomePage.title), icon: Icon(Icons.home)),
+          BottomNavigationBarItem(
+              title: Text(AnalyticPage.title), icon: Icon(Icons.show_chart)),
           BottomNavigationBarItem(
               title: Text("transfer"), icon: Icon(Icons.settings_overscan)),
           BottomNavigationBarItem(
@@ -25,10 +28,15 @@ class CommonBottomNav extends StatelessWidget {
             );
           case 1:
             return CupertinoTabView(
+              defaultTitle: AnalyticPage.title,
+              builder: (context) => AnalyticPage(),
+            );
+          case 2:
+            return CupertinoTabView(
               defaultTitle: HomePage.title,
               builder: (context) => HomePage(),
             );
-          case 2:
+          case 3:
             return CupertinoTabView(
               defaultTitle: HomePage.title,
               builder: (context) => HomePage(),
