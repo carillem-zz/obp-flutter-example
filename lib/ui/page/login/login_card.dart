@@ -66,14 +66,16 @@ class _LoginCardState extends State<LoginCard>
               height: 30.0,
             ),
             Container(
-              child: GradientButton(
-                  onPressed: () => (username != null && username.isNotEmpty
-                      && pass != null && pass.isNotEmpty)
-                      ? loginBloc.loginSink.add(
-                      UserLoginViewModel.withPass(
-                          username: username, pass: pass))
-                      : showPassError(context),
-                  text: Constants.login)
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                child: GradientButton(
+                    onPressed: () => (username != null && username.isNotEmpty
+                        && pass != null && pass.isNotEmpty)
+                        ? loginBloc.loginSink.add(
+                        UserLoginViewModel.withPass(
+                            username: username, pass: pass))
+                        : showPassError(context),
+                    text: Constants.login)
             )
           ],
         ),
@@ -85,7 +87,6 @@ class _LoginCardState extends State<LoginCard>
     return Opacity(
       opacity: animation.value,
       child: SizedBox(
-        height: deviceSize.height / 2 - 20,
         width: deviceSize.width * 0.85,
         child: Card(color: Colors.white, elevation: 2.0, child: loginBuilder()),
       ),
