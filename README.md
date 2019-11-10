@@ -1,4 +1,4 @@
-## Open Bank API client implemented with Flatter
+## Open Bank API client implemented with Flutter
 
 This is a technology demonstration of the OBP API usign Flatter.JS
 
