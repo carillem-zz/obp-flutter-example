@@ -1,6 +1,6 @@
 ## Open Bank API client implemented with Flutter
 
-This is a technology demonstration of the OBP API usign Flatter.JS
+This is a technology demonstration of the OBP API usign [Flutter](https://flutter.dev)
 
 ## Setup and run
 
