@@ -1,5 +1,5 @@
 import 'package:ez/model/fetch_process.dart';
-import 'package:ez/ui/page/account/account_list_page.dart';
+import 'package:ez/ui/page/main/main_page.dart';
 import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ apiSubscription(Stream<FetchProcess> apiResult, BuildContext context) {
             showSuccess(context, Constants.success, FontAwesomeIcons.check);
             Future.delayed(const Duration(seconds: 1), () {
               Navigator.pushAndRemoveUntil(
-                  context, MaterialPageRoute(builder: (context) => AccountListPage()), (Route<dynamic> route) => false);
+                  context, MaterialPageRoute(builder: (context) =>  MainPage()), (Route<dynamic> route) => false);
             });
             break;
           case ApiType.performCheckBalance:

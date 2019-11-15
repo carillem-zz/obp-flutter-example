@@ -35,4 +35,8 @@ class UserModel {
   AccountModel getAccountModel() {
     return _accountModel;
   }
+
+  clearInstance() {
+    _instance = null;
+  }
 }
