@@ -1,12 +1,17 @@
 import 'package:ez/logic/bloc/balance_bloc.dart';
 import 'package:ez/logic/viewmodel/home_view_model.dart';
 import 'package:ez/model/fetch_process.dart';
+import 'package:ez/model/response/account_model.dart';
 import 'package:ez/model/response/balance_response.dart';
 import 'package:ez/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardEntries extends StatefulWidget {
+
+  final AccountModel accountModel;
+  CardEntries({this.accountModel});
+
   @override
   _CardEntriesState createState() => new _CardEntriesState();
 }
