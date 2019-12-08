@@ -11,3 +11,6 @@ To login, use the username and password you noted above. After a successful logi
 
 ## Sandbox 
 OBP API sandbox : https://github.com/OpenBankProject/OBP-API/wiki/Sandbox
+
+## Demo
+http://demo.strings.my
